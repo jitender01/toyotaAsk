@@ -1,6 +1,6 @@
 # spring.data.mongodb.uri=mongodb+srv://<username>:<pwd>@<cluster>.mongodb.net/mygrocerylist
 spring:
-  data.mongodb.uri:mongodb+srv://jitender:L@dyluck1@cluster0.wcrbi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  data.mongodb.uri:mongodb+srv://jitender:<password>@cluster0.wcrbi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
   data.mongodb.database:myCustomerList
   kafka:
     consumer:
