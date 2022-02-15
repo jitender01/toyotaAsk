@@ -1,5 +1,7 @@
 package com.toyota.petsdemo.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -16,6 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/customerapi")
 public class MessageController {
+    Logger logger = LoggerFactory.getLogger(MessageController.class);
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
@@ -39,8 +42,10 @@ public class MessageController {
     }
 
 
-    @KafkaListener(topics = "toyota", groupId = "group-id")
+    @KafkaListener(topics = "toyota")
     public void listen(String message) {
+
+        logger.info("message -->",message);
         kafkaList.add(message);
     }
 
